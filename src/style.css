@@ -35,9 +35,12 @@ body {
   background-color: var(--bg-color);
   color: var(--font-color);
   cursor: none;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
+.main {
+  overflow-x: hidden;
+}
 /* Main cursor */
 .cursor {
   position: absolute;
@@ -48,6 +51,7 @@ body {
   pointer-events: none;
   transition: transform 0.15s ease-out;
   mix-blend-mode: difference;
+  z-index: 1000;
 }
 
 /* Glowing trail */
@@ -167,34 +171,6 @@ a {
   font-family: var(--font-family-paragraph);
 }
 
-/* .main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 124px;
-}
-
-.main-nav .logo img {
-  width: 164px;
-}
-.main-nav .links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.main-nav .links a {
-  font-family: var(--font-family-paragraph);
-  font-size: var(--font-size-small);
-  font-weight: 400;
-  color: var(--font-color);
-  transition: font-size 0.3s ease-in-out;
-}
-.main-nav .links a:hover {
-  font-size: 22px;
-} */
-
-/* navbar */
 /* Navbar Container */
 .navbar {
   display: flex;
@@ -300,7 +276,7 @@ a {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
-@media and screen (max-width: 1024px) {
+@media (max-width: 1024px) {
   /* Small Laptops */
   .navbar {
     padding: 24px 36px;
@@ -317,36 +293,6 @@ a {
 
 /* general media queries */
 
-/* media queries start for nav */
-@media and screen (max-width: 480px) {
-  /* Mobile Phones */
-  .main-nav {
-    padding: 12px 24px;
-  }
-  .main-nav .logo img {
-    width: 120px;
-  }
-  .main-nav .links {
-    gap: 12px;
-  }
-}
-@media and screen (max-width: 768px) {
-  /* Tablets */
-}
-@media and screen (max-width: 1024px) {
-  /* Small Laptops */
-}
-@media and screen (max-width: 1280px) {
-  /* Desktops */
-}
-@media and screen (max-width: 1440px) {
-  /* Large Screens */
-}
-@media and screen (max-width: 1920px) {
-  /* Extra Large Screens */
-}
-
-/* media queries start for nav */
 .mr-font {
   font-family: "Mr Dafoe", cursive;
   font-size: var(--font-size-xxlarge);
