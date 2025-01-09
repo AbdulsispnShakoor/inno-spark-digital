@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mr+Dafoe&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-color: #1e1e1e;
+  --primary-color: #f39c11;
+  --font-size: 16px;
+  --font-color: rgb(255, 255, 255);
+  --font-size-small: 20px;
+  --font-size-medium: 32px;
+  --font-size-large: 56px;
+  --font-size-xlarge: 64px;
+  --font-size-xxlarge: 96px;
+  --font-family-paragraph: "Lato", serif;
+  --font-family-heading: "Montserrat", serif;
+  --btn-fill-color: #090909;
+  --btn-fill-bg-color: rgb(255, 255, 255);
+  --btn-shadow-hover: 0 0px 0px 12px rgba(255, 255, 255, 0.4);
+  --btn-shadow: 0 4px 44px 0px rgba(255, 255, 255, 0.66);
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  cursor: none;
+  overflow: hidden;
+}
+
+/* Main cursor */
+.cursor {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #ff9800;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.15s ease-out;
+  mix-blend-mode: difference;
+}
+
+/* Glowing trail */
+.cursor-trail {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.2s ease-out;
+  filter: blur(4px);
+}
+
+/* Make cursor trail bigger on hover */
+a:hover ~ .cursor,
+button:hover ~ .cursor {
+  transform: scale(1.5);
+  background: rgb(0, 0, 0);
+}
+
+a:hover ~ .cursor-trail,
+button:hover ~ .cursor-trail {
+  background: rgb(0, 0, 0);
+}
+
+h1 {
+  font-size: var(--font-size-xxlarge);
+  font-weight: 800;
+  line-height: 1;
+}
+h2 {
+  font-size: var(--font-size-medium);
+  font-weight: 600;
+  line-height: 1.1;
+  font-family: var(--font-family-paragraph);
+}
+h3 {
+  font-size: var(--font-size-small);
+  font-weight: 600;
+}
+p {
+  font-size: var(--font-size-small);
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: var(--font-family-paragraph);
+}
+.btn-main {
+  background-color: var(--btn-fill-bg-color);
+  color: var(--btn-fill-color);
+  border: none;
+  padding: 18px 32px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  box-shadow: var(--btn-shadow);
+  transition: all 0.25s ease-in-out;
+}
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+button:hover::before {
+  width: 100%;
+  left: 0;
+}
+.btn-main:hover {
+  background-color: var(--btn-fill-bg-color);
+  color: var(--btn-fill-color);
+  border: none;
+  padding: 18px 32px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  box-shadow: var(--btn-shadow-hover);
+}
+.btn-outline {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #ffffff;
+  padding: 18px 32px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+}
+.btn-outline:hover {
+  background-color: var(--btn-fill-bg-color);
+  color: var(--btn-fill-color);
+  border: none;
+  padding: 18px 32px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  box-shadow: var(--btn-shadow-hover);
+}
+.btns-group {
+  display: flex;
+  gap: 20px;
+}
+a {
+  color: var(--font-color);
+  text-decoration: none;
+  font-family: var(--font-family-paragraph);
+}
+
+/* .main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 124px;
+}
+
+.main-nav .logo img {
+  width: 164px;
+}
+.main-nav .links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-nav .links a {
+  font-family: var(--font-family-paragraph);
+  font-size: var(--font-size-small);
+  font-weight: 400;
+  color: var(--font-color);
+  transition: font-size 0.3s ease-in-out;
+}
+.main-nav .links a:hover {
+  font-size: 22px;
+} */
+
+/* navbar */
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 124px;
+  background: rgba(51, 51, 51, 0.37);
+  color: white;
+}
+.navbar .logo img {
+  width: 150px;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+  font-family: var(--font-family-paragraph);
+}
+
+.nav-links a:hover {
+  color: #f4a261;
+}
+
+/* 🍔 Hamburger Menu - Hidden on Desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px;
+  transition: 0.3s;
+}
+
+/* 📱 Mobile Styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 24px 36px;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    width: 100%;
+    background: #222;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+    display: block;
+    padding: 10px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* 🟢 Active Menu */
+  .nav-active {
+    display: flex;
+  }
+
+  /* X Animation for Hamburger */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+@media and screen (max-width: 1024px) {
+  /* Small Laptops */
+  .navbar {
+    padding: 24px 36px;
+  }
+}
+/* navbar */
+/* general media queries */
+//@media (max-width: 480px)  { /* Mobile Phones */ }
+//@media (max-width: 768px)  { /* Tablets */ }
+//@media (max-width: 1024px) { /* Small Laptops */ }
+//@media (max-width: 1280px) { /* Desktops */ }
+//@media (max-width: 1440px) { /* Large Screens */ }
+//@media (max-width: 1920px) { /* Extra Large Screens */ }
+
+/* general media queries */
+
+/* media queries start for nav */
+@media and screen (max-width: 480px) {
+  /* Mobile Phones */
+  .main-nav {
+    padding: 12px 24px;
+  }
+  .main-nav .logo img {
+    width: 120px;
+  }
+  .main-nav .links {
+    gap: 12px;
+  }
+}
+@media and screen (max-width: 768px) {
+  /* Tablets */
+}
+@media and screen (max-width: 1024px) {
+  /* Small Laptops */
+}
+@media and screen (max-width: 1280px) {
+  /* Desktops */
+}
+@media and screen (max-width: 1440px) {
+  /* Large Screens */
+}
+@media and screen (max-width: 1920px) {
+  /* Extra Large Screens */
+}
+
+/* media queries start for nav */
+.mr-font {
+  font-family: "Mr Dafoe", cursive;
+  font-size: var(--font-size-xxlarge);
+  font-weight: 500;
+  color: var(--primary-color);
+}
