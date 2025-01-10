@@ -34,12 +34,13 @@ body {
 body {
   background-color: var(--bg-color);
   color: var(--font-color);
-  cursor: none;
+  /* cursor: none; */
   overflow-x: hidden;
 }
 
 .main {
   overflow-x: hidden;
+  position: relative;
 }
 /* Main cursor */
 .cursor {
@@ -51,7 +52,7 @@ body {
   pointer-events: none;
   transition: transform 0.15s ease-out;
   mix-blend-mode: difference;
-  z-index: 1000;
+  z-index: 1000 !important;
 }
 
 /* Glowing trail */
@@ -61,9 +62,10 @@ body {
   height: 40px;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
-  pointer-events: none;
+  /* pointer-events: none; */
   transition: transform 0.2s ease-out;
   filter: blur(4px);
+  z-index: 9999 !important;
 }
 
 /* Make cursor trail bigger on hover */
@@ -114,17 +116,19 @@ p {
 }
 button::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 50%;
   width: 0;
   height: 2px;
   background: white;
   transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  z-index: 1000;
 }
 button:hover::before {
   width: 100%;
   left: 0;
+  z-index: 1000;
 }
 .btn-main:hover {
   background-color: var(--btn-fill-bg-color);
@@ -137,6 +141,7 @@ button:hover::before {
   font-family: var(--font-family-heading);
   font-weight: 700;
   box-shadow: var(--btn-shadow-hover);
+  z-index: 1000;
 }
 .btn-outline {
   background-color: transparent;
@@ -177,8 +182,12 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 24px 124px;
-  background: rgba(51, 51, 51, 0.37);
+  background: #1e1e1e;
   color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
 }
 .navbar .logo img {
   width: 150px;

@@ -13,10 +13,10 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
 });
 
-document.addEventListener("mousemove", (e) => {
-  const cursor = document.querySelector(".cursor");
-  const trail = document.querySelector(".cursor-trail");
-
-  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-  trail.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
+// document.addEventListener("mousemove", (e) => {
+//   const cursor = document.querySelector(".cursor");
+//   const trail = document.querySelector(".cursor-trail");
+//   // console.log("x" + e.clientX, "y" + e.clientY);
+//   cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+//   trail.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+// });
