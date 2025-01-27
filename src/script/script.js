@@ -20,3 +20,45 @@ hamburger.addEventListener("click", () => {
 //   cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
 //   trail.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
 // });
+
+// tabs start here
+const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".content");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    // Remove active class from all tabs
+    tabs.forEach((t) => t.classList.remove("active"));
+    // Add active class to clicked tab
+    tab.classList.add("active");
+
+    // Hide all content
+    contents.forEach((content) => content.classList.remove("active"));
+    // Show content related to the clicked tab
+    const activeContent = document.getElementById(tab.dataset.tab);
+    activeContent.classList.add("active");
+  });
+});
+// tabs start here
+
+// filtration
+document.addEventListener("DOMContentLoaded", () => {
+  const filterCards = (category) => {
+    const cards = document.querySelectorAll(".custom-card");
+    cards.forEach((card) => {
+      if (category === "All" || card.dataset.category === category) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    const tabs = document.querySelectorAll(".custom-tab");
+    tabs.forEach((tab) => tab.classList.remove("active"));
+    document.getElementById(category).classList.add("active");
+  };
+
+  document.querySelectorAll(".custom-tab").forEach((tab) => {
+    tab.addEventListener("click", () => filterCards(tab.id));
+  });
+});

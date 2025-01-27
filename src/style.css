@@ -38,6 +38,30 @@ body {
   overflow-x: hidden;
 }
 
+/* scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 175, 47);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 157, 0);
+}
+/* scroll bar */
+
 .main {
   overflow-x: hidden;
   position: relative;
