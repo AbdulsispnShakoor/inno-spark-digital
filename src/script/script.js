@@ -62,3 +62,26 @@ document.addEventListener("DOMContentLoaded", () => {
     tab.addEventListener("click", () => filterCards(tab.id));
   });
 });
+
+// slidder script start here
+let index = 0;
+const slider = document.getElementById("slider");
+const totalSlides = document.querySelectorAll(".testimonial").length;
+const visibleSlides = 3;
+
+function updateSlidePosition() {
+  const offset = -(index * (100 / visibleSlides));
+  slider.style.transform = `translateX(${offset}%)`;
+}
+function nextSlide() {
+  index = (index + 1) % (totalSlides - visibleSlides + 1);
+  updateSlidePosition();
+}
+function prevSlide() {
+  index =
+    (index - 1 + (totalSlides - visibleSlides + 1)) %
+    (totalSlides - visibleSlides + 1);
+  updateSlidePosition();
+}
+setInterval(nextSlide, 8000);
+// slidder script end here

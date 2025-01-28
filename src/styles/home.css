@@ -7,7 +7,7 @@
   height: 100%;
 }
 .hero-section {
-  padding: 124px;
+  padding: 164px 124px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1009,7 +1009,7 @@ ul {
 
 .custom-card img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
 }
 
@@ -1076,9 +1076,117 @@ ul {
   }
   .custom-card img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
     display: block;
     object-fit: cover;
   }
 }
 /* portfolio section end here */
+
+/* testimonials section start here */
+
+.testimonials {
+  padding: 4rem 8rem;
+  display: flex;
+  flex-direction: column;
+}
+.testimonials h2 {
+  font-size: var(--font-size-xlarge);
+  font-weight: 700;
+}
+.testimonials p {
+  font-size: var(--font-size-medium);
+  font-weight: 600;
+  color: #c1c0c0;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 2rem;
+  }
+  .testimonials h2 {
+    font-size: var(--font-size-medium);
+  }
+  .testimonials p {
+    font-size: var(--font-size-small);
+  }
+}
+
+/* slidder start here */
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+.testimonial-slider {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+.testimonial {
+  min-width: calc(100% / 3);
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 16px 0px 0px 0px;
+  text-align: center;
+  position: relative;
+  min-height: 240px;
+}
+.testimonial h3 {
+  color: rgb(8, 8, 8);
+  font-size: var(--font-size-medium);
+  margin-top: 5px;
+}
+.testimonial p {
+  color: #3c3c3c;
+  font-size: var(--font-size-small);
+  margin-top: 5px;
+}
+
+.testimonial img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 1px solid #f39c11;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.56);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10000;
+  width: 36px;
+}
+.arrow:hover {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f39c11;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10000;
+  width: 36px;
+}
+.prev {
+  left: 0px;
+}
+.next {
+  right: 0px;
+}
+@media (max-width: 768px) {
+  .testimonial {
+    min-width: calc(100% / 1);
+  }
+}
+/* slidder end here */
+/* testimonials section end here */
