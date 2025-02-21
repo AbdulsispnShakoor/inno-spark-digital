@@ -22,9 +22,9 @@
       <!-- cursor -->
       <header class="home__header">
         <nav class="navbar">
-          <div class="logo">
+          <a href="/" class="logo">
             <img src="./public/images/logo.png" alt="inno spark digital" />
-          </div>
+          </a>
           <ul class="nav-links">
               <li><a href="/">Home</a></li>
               <li><a href="#about-us">About</a></li>
@@ -53,8 +53,10 @@
               Graphic Design, and 2D/3D Animation.
             </p>
             <div class="btns-group">
-              <button class="btn-main">Get a Free Consultation</button>
-              <button class="btn-outline">Explore Our Services</button>
+              <a href="./src/pages/contact.html"><button class="btn-main">Get a Free Consultation</button></a>
+              
+              <a href="#services-section"> <button class="btn-outline">Explore Our Services</button></a>
+              
             </div>
           </div>
           <div class="right">
@@ -118,7 +120,9 @@
             <li>Full-service digital agency based in the UK</li>
             <li>Proven experience in web development, graphic design, and animation</li>
             <li>A creative partner that brings your vision to life</li>
-            <button class="btn-main"> Learn More About Us</button>
+            <a href="/">
+              <button class="btn-main"> Learn More About Us</button>
+            </a>
           </ul>
           <img src="./public/images/home-about-img.png" alt="about us">
         </div>
@@ -129,13 +133,15 @@
        <section id="services-section"  class="what-we-do">
         <h2>What We Do</h2>
         <p>At InnoSpark Digital, we offer a wide range of digital services, all designed to help you grow in an increasingly competitive online space. From website development to captivating graphic design and cutting-edge animations, our team is dedicated to delivering solutions that are innovative, user-friendly, and results-driven.</p>
-        <button class="btn-main"> Explore All Services</button>
+        <a href="#services-section-02">
+          <button class="btn-main"> Explore All Services</button>
+        </a>
        </section>
       <!-- what we do -->
 
 
       <!-- tabs start here -->
-      <div class="container">
+      <div id="services-section-02"  class="container">
         <div class="tabs">
             <div class="tab active" data-tab="tab-1">Web Development</div>
             <div class="tab" data-tab="tab-2">Graphic Design</div>
@@ -164,7 +170,9 @@
     <section class="why-inno-spark">
       <div class="top">
         <h2>Why InnoSpark Digital?</h2>
-        <button class="btn-main">  Get Started with Us Today</button>
+        <a href="./src/pages/contact.html">
+          <button class="btn-main">  Get Started with Us Today</button>
+        </a>
       </div>
       <p>We don’t just deliver digital services – we deliver experiences that leave a lasting impact. Here’s why businesses choose us as their trusted digital partner.</p>
 
@@ -293,29 +301,25 @@
             <div class="testimonial-slider" id="slider">
                 <div class="testimonial">
                     <img src="./public/images/client-01.png" alt="Client">
-                    <h3>Client: Name</h3>
-                    <p>"InnoSpark Digital transformed our website and took our online presence to the next level. Highly recommend!"</p>
+                    <h3>Client: – James R. </h3>
+                    <p>*"InnoSpark Digital revamped our website, and we saw a huge boost in traffic within weeks!"*</p>
                 </div>
                 <div class="testimonial">
                     <img src="./public/images/client-02.png" alt="Client">
-                    <h3>Client: Name</h3>
-                    <p>"Their design work is exceptional – from logos to UI/UX. Professional, creative, and always on time."</p>
+                    <h3>Client:  – Sophia L.  </h3>
+                    <p> *"The team was super responsive and made our branding stand out. Couldn’t be happier!"*</p>
                 </div>
                 <div class="testimonial">
                     <img src="./public/images/client-03.png" alt="Client">
-                    <h3>Client: Name</h3>
-                    <p>"The team at InnoSpark Digital helped us launch our ecommerce store, and the results have been fantastic."</p>
+                    <h3>Client: – David M.  </h3>
+                    <p>*"They handled our social media marketing, and engagement went through the roof!"* </p>
                 </div>
                 <div class="testimonial">
                     <img src="./public/images/client-02.png" alt="Client">
-                    <h3>Client: Name</h3>
-                    <p>"Great experience! Their team is professional and delivered beyond expectations."</p>
+                    <h3>Client: – Emily T.  </h3>
+                    <p>*"Professional, creative, and results-driven—our new site looks amazing!"* </p>
                 </div>
-                <div class="testimonial">
-                  <img src="./public/images/client-03.png" alt="Client">
-                  <h3>Client: Name</h3>
-                  <p>"The team at InnoSpark Digital helped us launch our ecommerce store, and the results have been fantastic."</p>
-              </div>
+              
             </div>
             <button class="arrow next" onclick="nextSlide()">&#10095;</button>
         </div>
@@ -327,7 +331,9 @@
         <section class="process">
           <h2>Our Simple and Effective Process</h2>
           <p>We believe in making the digital journey smooth and transparent for our clients. Here’s how we approach every project.</p>
+          <a href="./src/pages/contact.html">
           <button class="btn-main" style="width:320px; margin-top:2rem;"> Let’s Start Your Project</button>
+          </a>
           <section class="process-cards">
             <div class="card-process one">
               <img src="./public/images/Untitled design (4).gif" alt="Idea">
@@ -391,11 +397,13 @@
             </div>
         </div>
         <div class="contact-form">
-            <form>
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <textarea placeholder="Project Description" required></textarea>
-                <input type="text" placeholder="Preferred Contact Method">
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="70b0082f-9afc-4207-83b3-7e7721a93639">
+                <input type="text" name="full name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea placeholder="Project Description" name="Project Description" required></textarea>
+                <input type="text" name="contact number" placeholder="Preferred Contact Method">
                 <button type="submit">Submit Inquiry</button>
             </form>
         </div>
